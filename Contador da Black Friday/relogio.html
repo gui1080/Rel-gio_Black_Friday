@@ -1,0 +1,329 @@
+<!---------------BASEADO EM: https://www.w3schools.com/howto/howto_js_countdown.asp ----------------------------------------->
+<!------------------------Contador da Black Friday 2021 -------------------------------->
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <style>
+
+      @font-face{
+          font-family: TrumpGothicWest; 
+          src: url('TrumpGothicWestW01Medium.ttf'); 
+      }
+      @font-face {
+          font-family: HelveticaNeue;
+          src: url('HelveticaNeueLT65Medium.ttf');
+      }
+      p{
+            text-align: center;
+            font-family: TrumpGothicWest;
+            font-size: 80px;
+            margin-top: 0px;
+            font-family: "sans-serif"; 
+            margin-bottom: 0px; 
+            color: #FFFFFF;
+            
+        }
+      
+        p2{
+            text-align: center;
+            font-size: 15px;
+            margin-top: 20px;
+            margin-bottom: 0px; 
+            color: #FFFFFF;
+            font-family: HelveticaNeue;
+        }
+      
+        .legenda{
+      	    text-align: center; 
+            margin-top: 0px;
+            font-family: TrumpGothicWest;
+        }
+
+        .inline-block-child {
+            display: inline-block;
+            background: #000000 0% 0% no-repeat padding-box;
+            border-radius: 15px;
+            letter-spacing: 4.45px;
+            
+        }
+
+        .parent {
+            padding: 1rem;
+            text-align: center;
+            background: white;
+        }
+        .child {
+            padding: 1rem;
+            top: 138px;
+            left: 506px;
+            width: 112px;
+            height: 136px;
+            margin-right: 5px; 
+        }
+
+        /* responsive, form small screens, use 13px font size */
+        @media (max-width: 479px) {
+
+        @font-face{
+            font-family: TrumpGothicWest; 
+            src: url('TrumpGothicWestW01Medium.ttf'); 
+        }
+        @font-face {
+            font-family: HelveticaNeue;
+            src: url('HelveticaNeueLT65Medium.ttf');
+        }
+        p{
+                text-align: center;
+                font-family: TrumpGothicWest;
+                font-size: 32px;
+                margin-top: 0px;
+                font-family: "sans-serif"; 
+                margin-bottom: 0px; 
+                color: #FFFFFF;
+                
+            }
+        
+            p2{
+                text-align: center;
+                font-size: 10px;
+                margin-top: 5px;
+                margin-bottom: 0px; 
+                color: #FFFFFF;
+                font-family: HelveticaNeue;
+            }
+        
+            .legenda{
+                text-align: center; 
+                margin-top: 0px;
+                font-family: TrumpGothicWest;
+            }
+
+            .inline-block-child {
+                display: inline-block;
+                background: #000000 0% 0% no-repeat padding-box;
+                border-radius: 15px;
+                letter-spacing: 4.45px;
+                
+            }
+
+            .parent {
+                padding: 1rem;
+                text-align: center;
+                background: white;
+            }
+            .child {
+                padding: 1rem;
+                top: 46px;
+                left: 169px;
+                width: 38px;
+                height: 46px;
+                margin-right: 3px; 
+            }
+        }
+
+      </style>
+
+  </head>
+  
+  <body>
+  
+    <div class="parent">
+
+  	<!-------------------------------------------------------->
+
+
+        <div class="child inline-block-child">
+
+        
+            <p id="DIAS"></p>
+
+            <div class="horas">
+
+                <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date("Nov 26, 2021 00:00:00").getTime();
+
+                    // Update the count down every 1 second
+                    var x = setInterval(function() {
+
+                        // Get today's date and time
+                        var now = new Date().getTime();
+
+                        // Find the distance between now and the count down date
+                        var distance = countDownDate - now;
+
+                        // Time calculations for days, hours, minutes and seconds
+                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+                        // Output the result in an element with id="demo"
+                        document.getElementById("DIAS").innerHTML = days ;
+
+                        // If the count down is over, write some text 
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("DIAS").innerHTML = "EXPIRED";
+                        }
+                    }, 1000);
+                </script>
+
+            </div>
+
+            <div class="legenda">
+
+                <p2>Dias</p2>
+
+            </div>
+
+
+        </div>
+
+        <!-------------------------------------------------------->
+    
+        <div class="child inline-block-child">
+
+            <p id="HORAS"></p>
+    
+
+            <div class="horas">
+
+                <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date("Nov 26, 2021 00:00:00").getTime();
+
+                    // Update the count down every 1 second
+                    var x = setInterval(function() {
+
+                        // Get today's date and time
+                        var now = new Date().getTime();
+
+                        // Find the distance between now and the count down date
+                        var distance = countDownDate - now;
+
+                        // Time calculations for days, hours, minutes and seconds
+                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+                        // Output the result in an element with id="demo"
+                        document.getElementById("HORAS").innerHTML = hours ;
+
+                        // If the count down is over, write some text 
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("HORAS").innerHTML = "EXPIRED";
+                        }
+                    }, 1000);
+                </script>
+
+            </div>
+
+            <div class="legenda">
+
+                <p2>Horas</p2>
+
+            </div>
+
+        </div>
+
+
+        <!-------------------------------------------------------->
+    
+        <div class="child inline-block-child">
+
+            <p id="MINUTOS"></p>
+    
+
+            <div class="horas">
+
+                <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date("Nov 26, 2021 00:00:00").getTime();
+
+                    // Update the count down every 1 second
+                    var x = setInterval(function() {
+
+                        // Get today's date and time
+                        var now = new Date().getTime();
+
+                        // Find the distance between now and the count down date
+                        var distance = countDownDate - now;
+
+                        // Time calculations for days, hours, minutes and seconds
+                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+                        // Output the result in an element with id="demo"
+                        document.getElementById("MINUTOS").innerHTML = minutes ;
+
+                        // If the count down is over, write some text 
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("MINUTOS").innerHTML = "EXPIRED";
+                            }
+                    }, 1000);
+                </script>
+
+            </div>
+
+            <div class="legenda">
+
+                <p2>Min</p2>
+
+            </div>
+
+        </div>
+        
+
+        <!-------------------------------------------------------->
+    
+        <div class="child inline-block-child">
+
+            <p id="SEGUNDOS"></p>
+    
+
+            <div class="horas">
+
+                <script>
+                    // Set the date we're counting down to
+                    var countDownDate = new Date("Nov 26, 2021 00:00:00").getTime();
+
+                    // Update the count down every 1 second
+                    var x = setInterval(function() {
+
+                        // Get today's date and time
+                        var now = new Date().getTime();
+
+                        // Find the distance between now and the count down date
+                        var distance = countDownDate - now;
+
+                        // Time calculations for days, hours, minutes and seconds
+                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                        // Output the result in an element with id="demo"
+                        document.getElementById("SEGUNDOS").innerHTML = seconds ;
+
+                        // If the count down is over, write some text 
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementById("SEGUNDOS").innerHTML = "EXPIRED";
+                        }
+                    }, 1000);
+                </script>
+
+            </div>
+
+            <div class="legenda">
+
+                <p2>Seg</p2>
+
+            </div>
+
+        </div>
+  
+	<!-------------------------------------------------------->
+  
+    </div>
+
+  </body>
+  
+</html>
